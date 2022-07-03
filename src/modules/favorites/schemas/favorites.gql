@@ -1,8 +1,8 @@
 type Favorite {
   id: ID!
-  userId: ID;
+  userId: ID
   bands: [Band]
-  genres: [Genre];
-  artists: [Artist];
-  tracks: [Track];
+  genres: [Genre]
+  artists: [Artist]
+  tracks: [Track]
 }
