@@ -1,4 +1,4 @@
-type Favorite {
+type Favourites   {
   id: ID!
   userId: ID
   bands: [Band]
@@ -6,3 +6,7 @@ type Favorite {
   artists: [Artist]
   tracks: [Track]
 }
+
+type Query {
+  favourites(id: ID!, userId: ID!): Favourites
+} 

@@ -5,3 +5,12 @@ type User {
   password: String
   email: String!
 }
+
+type JWT {
+  jwt: String!
+}
+
+type Query {
+  jwt(email: String!, password: String!): JWT
+  user(id: ID!): User
+}
