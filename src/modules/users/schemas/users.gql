@@ -14,3 +14,8 @@ type Query {
   jwt(email: String!, password: String!): JWT
   user(id: ID!): User
 }
+
+type Mutation {
+  createUser(firstName: String!, secondName: String!, password: String!, email: String!): User
+}
+

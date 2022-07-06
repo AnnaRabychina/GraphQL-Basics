@@ -13,3 +13,9 @@ type Query {
   album(id: ID!): Album
   albums(limit: Int, offset: Int): [Album]
 }
+
+type Mutation {
+  createAlbum(name: String!, released: Int, image: String): Album
+  updateAlbum(id: ID!, name: String, released: Int, image: String): Album
+  deleteAlbum(id: ID!): Album
+}
