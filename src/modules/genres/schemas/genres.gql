@@ -1,0 +1,23 @@
+type Genre {
+  _id: ID!
+  name: String
+  description: String
+  country: String
+  year: Int
+} 
+
+type Query{
+  genre(id: ID!): Genre,
+  genres(limit: Int, offset: Int): [Genre]
+}
+
+type DeleteResponse{
+  acknowledged: Boolean!
+  deletedCount: Int
+}
+
+type Mutation{
+  createGenre(name: String!, description: String, country: String, year: Int): Genre!
+  updateGenre(id: ID!, name: String!, description: String, country: String, year: Int): Genre!
+  deleteGenre(id: ID!): DeleteResponse
+}

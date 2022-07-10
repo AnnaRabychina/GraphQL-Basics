@@ -1,0 +1,17 @@
+type User {
+  _id: ID!
+  firstName: String
+  secondName: String
+  password: String
+  email: String!
+}
+
+type Query {
+  jwt(email: String!, password: String!): String
+  user(id: ID!): User
+}
+
+type Mutation {
+  createUser(firstName: String!, secondName: String!, password: String!, email: String!): User
+}
+
