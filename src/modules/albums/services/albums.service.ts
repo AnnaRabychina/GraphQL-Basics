@@ -1,11 +1,11 @@
 import { RequestOptions, RESTDataSource } from 'apollo-datasource-rest';
 import 'dotenv/config';
 
-export class bandService extends RESTDataSource {
+export class albumService extends RESTDataSource {
 
-  constructor() {
+    constructor() {
     super();
-    this.baseURL = process.env.BANDS_URL;
+    this.baseURL = process.env.ALBUMS_URL;
   }
 
   protected willSendRequest(request: RequestOptions): void | Promise<void> {
@@ -14,25 +14,25 @@ export class bandService extends RESTDataSource {
     }
   }
 
-  async getBands(limit = 5, offset = 0): Promise<any> {
+  async getAlbums(limit = 5, offset = 0): Promise<any> {
     const data = await this.get('', { limit: limit, offset: offset });
     return data.items; 
   }
 
-  async getBandById(id: string): Promise<any> {
+  async getAlbumById(id: string): Promise<any> {
     return await this.get(`/${id}`);
   }
 
-  async createBand(band): Promise<any> {
-    const data = await this.post('', band);
+  async createAlbum(album): Promise<any> {
+    const data = await this.post('', album);
     return data;
   }
 
-  async updateBand(id: string, band): Promise<any> {
-    return await this.put(`/${id}`, {...band});
+  async updateAlbum(id: string, album): Promise<any> {
+    return await this.put(`/${id}`, {...album});
   }
 
-  async deleteBand(id: string): Promise<any> {
+  async deleteAlbum(id: string): Promise<any> {
     return await this.delete(`/${id}`);
   }
 }

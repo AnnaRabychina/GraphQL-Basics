@@ -35,6 +35,5 @@ export class artistService extends RESTDataSource {
   async deleteArtist(id: string): Promise<any> {
     return await this.delete(`/${id}`);
   }
-
 }
 

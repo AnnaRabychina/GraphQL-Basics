@@ -30,7 +30,7 @@ type Mutation {
   deleteBand(id: ID!): DeleteResponse
 }
 
-type DeleteResponse{
+type DeleteResponse {
   acknowledged: Boolean!
   deletedCount: Int
 }
